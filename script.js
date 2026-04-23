@@ -1,5 +1,6 @@
 const items = document.querySelectorAll('.item');
-const dropzones = document.querySelectorAll('.smallBox, .bigBox');
+// ИЗМЕНЕНО: .box-content вместо .smallBox
+const dropzones = document.querySelectorAll('.box-content, .bigBox');
 
 items.forEach(item => {
     item.addEventListener('dragstart', () => {
@@ -25,19 +26,20 @@ dropzones.forEach(dropzone => {
         e.preventDefault();
         dropzone.style.backgroundColor = "";
         const draggedItem = document.querySelector('.is-dragging');
-        dropzone.appendChild(draggedItem);
+        dropzone.appendChild(draggedItem);  // Теперь добавляет в .box-content
     });
 });
 
 // Submit button handler
 const submitBtn = document.getElementById('submitBtn');
 const errorMessage = document.getElementById('error-message');
-const smallBoxes = document.querySelectorAll('.smallBox'); 
+// ИЗМЕНЕНО: проверяем .box-content
+const boxContents = document.querySelectorAll('.box-content'); 
 
 submitBtn.addEventListener('click', () => {
     let allFilled = true;
 
-    smallBoxes.forEach(box => {
+    boxContents.forEach(box => {  // ИЗМЕНЕНО: boxContents вместо smallBoxes
         if (box.children.length === 0) {
             allFilled = false;
         }

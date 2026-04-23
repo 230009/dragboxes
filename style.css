@@ -12,18 +12,6 @@
     box-sizing: border-box;
 }
 
-.item{
-    width: 200px;
-    height: 100px;
-    background-color: lightgreen;
-    border: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    cursor: grab;
-}
-
 .container{
     display: flex;
     justify-content: space-around;
@@ -33,14 +21,60 @@
 
 .smallBox{
     width: 300px;
-    height: 200px;
+    height: 500px;
     background-color: darkkhaki;
-    border: 2px solid white;
+    border: 2px solid #8B7355;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;  /* Убираем padding у родителя */
+}
+
+.box-header{
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid #8B7355;
+    background-color: #B8B090;
+    flex-shrink: 0;
+}
+
+.box-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* СТРОГО сверху */
+    align-items: center;
+    align-content: flex-start;    /* Добавлено для надежности */
+    padding: 20px 15px 15px;      /* Отступ сверху 20px */
+    gap: 15px;
+    overflow-y: auto;
+    min-height: 0;  /* Важно для flex children */
+}
+
+.item{
+    width: 220px;
+    height: 90px;
+    background-color: #90EE90;
+    border: 2px solid #2E7D32;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    flex-wrap: wrap;
+    font-weight: bold;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    flex-shrink: 0;  /* Не сжиматься */
+}
+
+/* Убираем конфликтующие правила */
+.item + .item {
+    margin-top: 0;
+}
+
+.box-content {
+    /* ... остальные свойства ... */
+    height: 100%;  /* Явная высота */
 }
 
 #submitBtn{

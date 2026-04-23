@@ -1,5 +1,4 @@
 const items = document.querySelectorAll('.item');
-// ИЗМЕНЕНО: .box-content вместо .smallBox
 const dropzones = document.querySelectorAll('.box-content, .bigBox');
 
 items.forEach(item => {
@@ -14,8 +13,14 @@ items.forEach(item => {
 
 dropzones.forEach(dropzone => {
     dropzone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        dropzone.style.backgroundColor = 'lightblue';
+        const draggedItem = document.querySelector('.is-dragging');
+        const sourceRank = parseInt(draggedItem.parentElement.dataset.rank || 0);
+        const targetRank = parseInt(dropzone.dataset.rank || 0);
+
+        if (targetRank >= sourceRank) {
+            e.preventDefault();
+            dropzone.style.backgroundColor = 'lightblue';
+        }
     });
 
     dropzone.addEventListener('dragleave', () => {
@@ -30,10 +35,9 @@ dropzones.forEach(dropzone => {
     });
 });
 
-// Submit button handler
+// Submit 
 const submitBtn = document.getElementById('submitBtn');
 const errorMessage = document.getElementById('error-message');
-// ИЗМЕНЕНО: проверяем .box-content
 const boxContents = document.querySelectorAll('.box-content'); 
 
 submitBtn.addEventListener('click', () => {

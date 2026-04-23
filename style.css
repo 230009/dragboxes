@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding: 0;  /* Убираем padding у родителя */
+    padding: 0;  
 }
 
 .box-header{
@@ -43,13 +43,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;  /* СТРОГО сверху */
+    justify-content: flex-start; 
     align-items: center;
-    align-content: flex-start;    /* Добавлено для надежности */
-    padding: 20px 15px 15px;      /* Отступ сверху 20px */
+    align-content: flex-start;    
+    padding: 20px 15px 15px;     
     gap: 15px;
     overflow-y: auto;
-    min-height: 0;  /* Важно для flex children */
+    min-height: 0; 
 }
 
 .item{
@@ -64,17 +64,15 @@
     font-weight: bold;
     cursor: grab;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    flex-shrink: 0;  /* Не сжиматься */
+    flex-shrink: 0;  
 }
 
-/* Убираем конфликтующие правила */
 .item + .item {
     margin-top: 0;
 }
 
 .box-content {
-    /* ... остальные свойства ... */
-    height: 100%;  /* Явная высота */
+    height: 100%; 
 }
 
 #submitBtn{

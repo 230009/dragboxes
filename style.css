@@ -1,0 +1,72 @@
+.bigBox{
+    width: 900px;
+    height: 200px;
+    background-color: lightblue;
+    border: 2px solid white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.item{
+    width: 200px;
+    height: 100px;
+    background-color: lightgreen;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: grab;
+}
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.smallBox{
+    width: 300px;
+    height: 200px;
+    background-color: darkkhaki;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+#submitBtn{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#submitBtn:hover{
+    background-color: #45a049;
+}
+
+#error-message{
+    color: red;
+    font-weight: bold;
+    display: none;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+}
